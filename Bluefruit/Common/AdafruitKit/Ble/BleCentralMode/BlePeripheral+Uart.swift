@@ -56,7 +56,7 @@ extension BlePeripheral {
         }
     }
 
-    fileprivate var sendSequentiallyCancelled: Bool {
+    fileprivate var isSendSequentiallyCancelled: Bool {
         get {
             return objc_getAssociatedObject(self, &CustomPropertiesKeys.sendSequentiallyCancelled) as! Bool
         }
@@ -84,6 +84,7 @@ extension BlePeripheral {
 
             self.uartTxCharacteristic = characteristic
             self.uartTxCharacteristicWriteType = characteristic.properties.contains(.writeWithoutResponse) ? .withoutResponse:.withResponse
+            //self.uartTxCharacteristicWriteType = .withResponse        // Debug: force withResponse
 
             self.characteristic(uuid: BlePeripheral.kUartRxCharacteristicUUID, serviceUuid: BlePeripheral.kUartServiceUUID) { [unowned self] (characteristic, error) in
                 guard let characteristic = characteristic, error == nil else {
@@ -149,7 +150,8 @@ extension BlePeripheral {
         var offset = 0
         var writtenSize = 0
         
-        let maxPacketSize = peripheral.maximumWriteValueLength(for: uartTxCharacteristicWriteType)
+        //let maxPacketSize = peripheral.maximumWriteValueLength(for: uartTxCharacteristicWriteType)
+        let maxPacketSize = peripheral.maximumWriteValueLength(for: .withoutResponse)      // Use .withoutResponse event if sending .withResponse or didWriteValueFor is not called when using a larger packet
         
         repeat {
             
@@ -160,7 +162,8 @@ extension BlePeripheral {
                 if let error = error {
                     DLog("write packet at offset: \(writeStartingOffset) error: \(error)")
                 } else {
-                    DLog("uart tx write (hex): \(hexDescription(data: packet))")
+                    //DLog("tx offset:\(offset): \(hexDescription(data: packet))")
+                    //DLog("uart tx write (hex): \(hexDescription(data: packet))")
                     // DLog("uart tx write (dec): \(decimalDescription(data: packet))")
                     // DLog("uart tx write (utf8): \(String(data: packet, encoding: .utf8) ?? "<invalid>")")
                     
@@ -183,61 +186,66 @@ extension BlePeripheral {
         
     }
     
-    /*
-        Sends each packet with a DipatchQueue.main.async. Useful if the UI should be updated between packets
-     */
-    func uartEachPacketSendSequentiallyInMainThread(data: Data?, progress: ((Float)->Void)? = nil, completion: ((Error?) -> Void)? = nil) {
+    func uartSendEachPacketSequentially(data: Data?, withResponseEveryPacketCount: Int,  progress: ((Float)->Void)? = nil, completion: ((Error?) -> Void)? = nil) {
         guard let data = data else { completion?(nil); return }
         
-        guard let uartTxCharacteristic = uartTxCharacteristic, let uartTxCharacteristicWriteType = uartTxCharacteristicWriteType else {
+        guard let uartTxCharacteristic = uartTxCharacteristic else {//}, let uartTxCharacteristicWriteType = uartTxCharacteristicWriteType else {
             DLog("Command Error: characteristic no longer valid")
             completion?(PeripheralUartError.invalidCharacteristic)
             return
         }
         
-        sendSequentiallyCancelled = false
-        uartSentPacket(data: data, offset: 0, uartTxCharacteristic: uartTxCharacteristic, uartTxCharacteristicWriteType: uartTxCharacteristicWriteType, progress: progress, completion: completion)
+        isSendSequentiallyCancelled = false
+        uartSentPacket(data: data, offset: 0, uartTxCharacteristic: uartTxCharacteristic, withResponseEveryPacketCount: withResponseEveryPacketCount, numPacketsRemainingForDelay: withResponseEveryPacketCount, progress: progress, completion: completion)
     }
     
     func uartCancelOngoingSendPacketSequentiallyInMainThread() {
-        sendSequentiallyCancelled = true
+        isSendSequentiallyCancelled = true
     }
     
-    private func uartSentPacket(data: Data, offset: Int, uartTxCharacteristic: CBCharacteristic, uartTxCharacteristicWriteType: CBCharacteristicWriteType, progress: ((Float)->Void)? = nil, completion: ((Error?) -> Void)? = nil) {
+    private func uartSentPacket(data: Data, offset: Int, uartTxCharacteristic: CBCharacteristic, withResponseEveryPacketCount: Int, numPacketsRemainingForDelay: Int, progress: ((Float)->Void)? = nil, completion: ((Error?) -> Void)? = nil) {
         
-        let maxPacketSize = peripheral.maximumWriteValueLength(for: uartTxCharacteristicWriteType)
+        //let maxPacketSize = peripheral.maximumWriteValueLength(for: uartTxCharacteristicWriteType)
+        let maxPacketSize = peripheral.maximumWriteValueLength(for: .withoutResponse)      // Use .withoutResponse event if sending .withResponse or didWriteValueFor is not called when using a larger packet
         let packetSize = min(data.count-offset, maxPacketSize)
         let packet = data.subdata(in: offset..<offset+packetSize)
         let writeStartingOffset = offset
+        let uartTxCharacteristicWriteType: CBCharacteristicWriteType = numPacketsRemainingForDelay <= 0 ? .withResponse : .withoutResponse          // Send a packet .withResponse to force wait until receive response and avoid dropping packets if the peripheral is not processing them fast enough
+        
         self.write(data: packet, for: uartTxCharacteristic, type: uartTxCharacteristicWriteType) { error in
             
             var writtenSize = writeStartingOffset
             if let error = error {
                 DLog("write packet at offset: \(writeStartingOffset) error: \(error)")
             } else {
-                DLog("uart tx write at offset: \(writeStartingOffset) (hex): \(hexDescription(data: packet))")
+                DLog("uart tx \(uartTxCharacteristicWriteType == .withResponse ? "withResponse":"withoutResponse") offset: \(writeStartingOffset): \(hexDescription(data: packet))")
                 
                 writtenSize += packet.count
                 if BlePeripheral.kDebugLog {
                     UartLogManager.log(data: packet, type: .uartTx)
                 }
                 
-                if !self.sendSequentiallyCancelled && writtenSize < data.count {
-                    DispatchQueue.main.async { [weak self] in
-                        self?.uartSentPacket(data: data, offset: writtenSize, uartTxCharacteristic: uartTxCharacteristic, uartTxCharacteristicWriteType: uartTxCharacteristicWriteType, progress: progress, completion: completion)
+                if !self.isSendSequentiallyCancelled && writtenSize < data.count {
+                    DispatchQueue.main.async {      // Send in main thread to avoid commandqueue function nesting limit if there is a lot of data to send
+                        self.uartSentPacket(data: data, offset: writtenSize, uartTxCharacteristic: uartTxCharacteristic, withResponseEveryPacketCount: withResponseEveryPacketCount,  numPacketsRemainingForDelay: numPacketsRemainingForDelay <= 0 ? withResponseEveryPacketCount : numPacketsRemainingForDelay-1, progress: progress, completion: completion)
                     }
                 }
             }
             
-            if self.sendSequentiallyCancelled {
-                completion?(nil)
-            }
-            else if writtenSize >= data.count {
-                progress?(1)
-                completion?(error)
-            }
-            else {
-                progress?(Float(writtenSize) / Float(data.count))
+            // Call completion handlers in main thread
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                
+                if self.isSendSequentiallyCancelled {
+                    completion?(nil)
+                }
+                else if writtenSize >= data.count {
+                    progress?(1)
+                    completion?(error)
+                }
+                else {
+                    progress?(Float(writtenSize) / Float(data.count))
+                }
             }
         }
     }
@@ -269,7 +277,8 @@ extension BlePeripheral {
         // Split data in kUartTxMaxBytes bytes packets
         var offset = 0
         var writtenSize = 0
-        let maxPacketSize = peripheral.maximumWriteValueLength(for: .withResponse)
+        //let maxPacketSize = peripheral.maximumWriteValueLength(for: .withResponse)
+        let maxPacketSize = peripheral.maximumWriteValueLength(for: .withoutResponse)      // Use .withoutResponse event if sending .withResponse or didWriteValueFor is not called when using a larger packet
         repeat {
             let packetSize = min(data.count-offset, maxPacketSize)
             let packet = data.subdata(in: offset..<offset+packetSize)

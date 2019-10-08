@@ -46,7 +46,6 @@
 		A915427B1EDD7C3F007A34EA /* StyledLinkedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A915427A1EDD7C3F007A34EA /* StyledLinkedButton.swift */; };
 		A915427D1EDD7CE8007A34EA /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A915427C1EDD7CE8007A34EA /* Config.swift */; };
 		A915427F1EDD8041007A34EA /* StyledAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A915427E1EDD8041007A34EA /* StyledAnimations.swift */; };
-		A915D3FF22AEF8AA009DBFCF /* ImageTransferModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A915D3FE22AEF8AA009DBFCF /* ImageTransferModuleViewController.swift */; };
 		A915D40122AF230E009DBFCF /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A915D40022AF230E009DBFCF /* ImagePicker.swift */; };
 		A91D65A41EFC15900097C8B6 /* PeripheralModulesDeviceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91D65A31EFC15900097C8B6 /* PeripheralModulesDeviceTableViewCell.swift */; };
 		A91D65AA1EFD69190097C8B6 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91D65A91EFD69190097C8B6 /* MainWindowController.swift */; };
@@ -71,6 +70,9 @@
 		A9286CDB1E3A9B22008E5F81 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9286CCE1E3A9B22008E5F81 /* Preferences.swift */; };
 		A9335EDA1F526E3C009EB5B5 /* ThermalCameraModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9335ED91F526E3C009EB5B5 /* ThermalCameraModuleViewController.swift */; };
 		A9335EDC1F526EE2009EB5B5 /* ThermalCameraModuleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9335EDB1F526EE2009EB5B5 /* ThermalCameraModuleManager.swift */; };
+		A93845D022DFD99400CB218E /* ImageTransferModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A915D3FE22AEF8AA009DBFCF /* ImageTransferModuleViewController.swift */; };
+		A93845D322DFD99F00CB218E /* ImagePickerCroppingAreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93845CD22DFD7CF00CB218E /* ImagePickerCroppingAreaViewController.swift */; };
+		A93845D522DFE11D00CB218E /* NSLayoutConstraint+ChangeMultiplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93845D422DFE11D00CB218E /* NSLayoutConstraint+ChangeMultiplier.swift */; };
 		A93DE7511F36176F00B2EB5D /* UartBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DE7501F36176F00B2EB5D /* UartBaseViewController.swift */; };
 		A93DE7631F36195900B2EB5D /* BleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DE7541F36195900B2EB5D /* BleManager.swift */; };
 		A93DE7641F36195900B2EB5D /* BleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DE7541F36195900B2EB5D /* BleManager.swift */; };
@@ -104,6 +106,7 @@
 		A93DE7851F36196B00B2EB5D /* UartLogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DE75A1F36195900B2EB5D /* UartLogManager.swift */; };
 		A93DE7861F36196B00B2EB5D /* UartPacketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DE75B1F36195900B2EB5D /* UartPacketManager.swift */; };
 		A93DE78C1F36196B00B2EB5D /* UartPacketManagerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93DE7621F36195900B2EB5D /* UartPacketManagerBase.swift */; };
+		A94056F12336EB2100872FD1 /* TraitOverrideContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94056F02336EB2100872FD1 /* TraitOverrideContainerViewController.swift */; };
 		A945EA551E4DEF0100737BB0 /* XML.swift in Sources */ = {isa = PBXBuildFile; fileRef = A945EA281E4DEF0100737BB0 /* XML.swift */; };
 		A945EA6B1E4DF3CA00737BB0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A945EA6A1E4DF3CA00737BB0 /* libz.tbd */; };
 		A945EA6F1E4DF53100737BB0 /* MSWeakTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = A945EA6E1E4DF53100737BB0 /* MSWeakTimer.m */; };
@@ -209,6 +212,14 @@
 		A991A7C422AFDFE2003AE632 /* UIImage+pixelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A991A7C122AFDF1E003AE632 /* UIImage+pixelData.swift */; };
 		A9A6C2471E4B8A0500CEBFEC /* UartSelectPeripheralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A6C2461E4B8A0500CEBFEC /* UartSelectPeripheralViewController.swift */; };
 		A9A89BDC1E83C5B000724F0E /* StyledConnectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A89BDB1E83C5B000724F0E /* StyledConnectButton.swift */; };
+		A9B7E0802334E72100ED0384 /* ColorPaletteInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCD5E41E4D2B8A003D1CEA /* ColorPaletteInterfaceController.swift */; };
+		A9B7E0812334E72100ED0384 /* ColorRGBInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCD5E51E4D2B8A003D1CEA /* ColorRGBInterfaceController.swift */; };
+		A9B7E0822334E72100ED0384 /* ConnectedInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCD5E61E4D2B8A003D1CEA /* ConnectedInterfaceController.swift */; };
+		A9B7E0832334E72100ED0384 /* ControlModeInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCD5E71E4D2B8A003D1CEA /* ControlModeInterfaceController.swift */; };
+		A9B7E0842334E72100ED0384 /* ControlPadInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCD5E81E4D2B8A003D1CEA /* ControlPadInterfaceController.swift */; };
+		A9B7E0852334E72100ED0384 /* MainInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCD5E91E4D2B8A003D1CEA /* MainInterfaceController.swift */; };
+		A9B7E0862334E72100ED0384 /* PickerModeInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCD5EA1E4D2B8A003D1CEA /* PickerModeInterfaceController.swift */; };
+		A9B7E0872334E72100ED0384 /* ScanningInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCD5EB1E4D2B8A003D1CEA /* ScanningInterfaceController.swift */; };
 		A9BAD20E1E3FA1370021DFA9 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A9BAD20D1E3FA1370021DFA9 /* Settings.bundle */; };
 		A9BAD2121E3FC6CA0021DFA9 /* InfoCharacteristicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BAD2101E3FC6CA0021DFA9 /* InfoCharacteristicTableViewCell.swift */; };
 		A9BAD2131E3FC6CA0021DFA9 /* InfoModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BAD2111E3FC6CA0021DFA9 /* InfoModeViewController.swift */; };
@@ -263,22 +274,6 @@
 		A9BCD6041E4D34D9003D1CEA /* HandoffManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCD6011E4D34D9003D1CEA /* HandoffManager.swift */; };
 		A9BCD6051E4D34D9003D1CEA /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCD6021E4D34D9003D1CEA /* WatchSessionManager.swift */; };
 		A9BCD6061E4D34D9003D1CEA /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCD6021E4D34D9003D1CEA /* WatchSessionManager.swift */; };
-		A9BCD6071E4D36DE003D1CEA /* ColorPaletteInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCD5E41E4D2B8A003D1CEA /* ColorPaletteInterfaceController.swift */; };
-		A9BCD6081E4D36DE003D1CEA /* ColorRGBInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCD5E51E4D2B8A003D1CEA /* ColorRGBInterfaceController.swift */; };
-		A9BCD6091E4D36DE003D1CEA /* ConnectedInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCD5E61E4D2B8A003D1CEA /* ConnectedInterfaceController.swift */; };
-		A9BCD60A1E4D36DE003D1CEA /* ControlModeInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCD5E71E4D2B8A003D1CEA /* ControlModeInterfaceController.swift */; };
-		A9BCD60B1E4D36DE003D1CEA /* ControlPadInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCD5E81E4D2B8A003D1CEA /* ControlPadInterfaceController.swift */; };
-		A9BCD60C1E4D36DE003D1CEA /* MainInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCD5E91E4D2B8A003D1CEA /* MainInterfaceController.swift */; };
-		A9BCD60D1E4D36DE003D1CEA /* PickerModeInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCD5EA1E4D2B8A003D1CEA /* PickerModeInterfaceController.swift */; };
-		A9BCD60E1E4D36DE003D1CEA /* ScanningInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCD5EB1E4D2B8A003D1CEA /* ScanningInterfaceController.swift */; };
-		A9BCD60F1E4D36DF003D1CEA /* ColorPaletteInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCD5E41E4D2B8A003D1CEA /* ColorPaletteInterfaceController.swift */; };
-		A9BCD6101E4D36DF003D1CEA /* ColorRGBInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCD5E51E4D2B8A003D1CEA /* ColorRGBInterfaceController.swift */; };
-		A9BCD6111E4D36DF003D1CEA /* ConnectedInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCD5E61E4D2B8A003D1CEA /* ConnectedInterfaceController.swift */; };
-		A9BCD6121E4D36DF003D1CEA /* ControlModeInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCD5E71E4D2B8A003D1CEA /* ControlModeInterfaceController.swift */; };
-		A9BCD6131E4D36DF003D1CEA /* ControlPadInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCD5E81E4D2B8A003D1CEA /* ControlPadInterfaceController.swift */; };
-		A9BCD6141E4D36DF003D1CEA /* MainInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCD5E91E4D2B8A003D1CEA /* MainInterfaceController.swift */; };
-		A9BCD6151E4D36DF003D1CEA /* PickerModeInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCD5EA1E4D2B8A003D1CEA /* PickerModeInterfaceController.swift */; };
-		A9BCD6161E4D36DF003D1CEA /* ScanningInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCD5EB1E4D2B8A003D1CEA /* ScanningInterfaceController.swift */; };
 		A9BCD6171E4D3932003D1CEA /* HexColorConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCD5851E4D2616003D1CEA /* HexColorConversions.swift */; };
 		A9BCD6251E4D3A9F003D1CEA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCD6241E4D3A9F003D1CEA /* main.swift */; };
 		A9BCD62A1E4D3B0B003D1CEA /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCD6271E4D3B0B003D1CEA /* CommandLine.swift */; };
@@ -445,6 +440,8 @@
 		A9286CCE1E3A9B22008E5F81 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		A9335ED91F526E3C009EB5B5 /* ThermalCameraModuleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThermalCameraModuleViewController.swift; sourceTree = "<group>"; };
 		A9335EDB1F526EE2009EB5B5 /* ThermalCameraModuleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThermalCameraModuleManager.swift; sourceTree = "<group>"; };
+		A93845CD22DFD7CF00CB218E /* ImagePickerCroppingAreaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerCroppingAreaViewController.swift; sourceTree = "<group>"; };
+		A93845D422DFE11D00CB218E /* NSLayoutConstraint+ChangeMultiplier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+ChangeMultiplier.swift"; sourceTree = "<group>"; };
 		A93DE7501F36176F00B2EB5D /* UartBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UartBaseViewController.swift; sourceTree = "<group>"; };
 		A93DE7541F36195900B2EB5D /* BleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleManager.swift; sourceTree = "<group>"; };
 		A93DE7551F36195900B2EB5D /* BlePeripheral+Battery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BlePeripheral+Battery.swift"; sourceTree = "<group>"; };
@@ -460,6 +457,7 @@
 		A93DE7601F36195900B2EB5D /* UartPeripheralModePacketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UartPeripheralModePacketManager.swift; sourceTree = "<group>"; };
 		A93DE7611F36195900B2EB5D /* UartPeripheralService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UartPeripheralService.swift; sourceTree = "<group>"; };
 		A93DE7621F36195900B2EB5D /* UartPacketManagerBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UartPacketManagerBase.swift; sourceTree = "<group>"; };
+		A94056F02336EB2100872FD1 /* TraitOverrideContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraitOverrideContainerViewController.swift; sourceTree = "<group>"; };
 		A945EA281E4DEF0100737BB0 /* XML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XML.swift; sourceTree = "<group>"; };
 		A945EA6A1E4DF3CA00737BB0 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
 		A945EA6D1E4DF53100737BB0 /* MSWeakTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSWeakTimer.h; sourceTree = "<group>"; };
@@ -815,8 +813,10 @@
 			children = (
 				A915D3FE22AEF8AA009DBFCF /* ImageTransferModuleViewController.swift */,
 				A915D40022AF230E009DBFCF /* ImagePicker.swift */,
+				A93845CD22DFD7CF00CB218E /* ImagePickerCroppingAreaViewController.swift */,
 				A991A7BC22AFBA36003AE632 /* ImageTransferModuleManager.swift */,
 				A991A7C122AFDF1E003AE632 /* UIImage+pixelData.swift */,
+				A93845D422DFE11D00CB218E /* NSLayoutConstraint+ChangeMultiplier.swift */,
 			);
 			path = ImageTransfer;
 			sourceTree = "<group>";
@@ -910,6 +910,7 @@
 		A9286CB91E3A9383008E5F81 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A94056F02336EB2100872FD1 /* TraitOverrideContainerViewController.swift */,
 				A9E1371B1ECB2F11004C64E1 /* MainSplitViewController.swift */,
 				A90C79721E40CB150076E8AD /* EmptyDetailsViewController.swift */,
 				A90C79731E40CB150076E8AD /* HelpViewController.swift */,
@@ -1742,7 +1743,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = Adafruit;
 				TargetAttributes = {
 					A9286C951E3A9216008E5F81 = {
@@ -1981,11 +1982,13 @@
 				A9BCD5961E4D2616003D1CEA /* MqttSettings.swift in Sources */,
 				A9BCD56C1E4D2549003D1CEA /* RssiUI.swift in Sources */,
 				A94A21B01E417271006A5F33 /* UartSettingTableViewCell.swift in Sources */,
+				A93845D522DFE11D00CB218E /* NSLayoutConstraint+ChangeMultiplier.swift in Sources */,
 				A91E7D5D1E4216ED00DE90C6 /* UIImage+Tint.swift in Sources */,
 				A91542761EDD7BC9007A34EA /* CalibrationUartViewController.swift in Sources */,
 				A9BCD5901E4D2616003D1CEA /* HexColorConversions.swift in Sources */,
 				A983781D1E42A96400170319 /* DfuModeViewController.swift in Sources */,
 				A91542731EDD7BC9007A34EA /* PageContentViewController.swift in Sources */,
+				A93845D022DFD99400CB218E /* ImageTransferModuleViewController.swift in Sources */,
 				A9BCD57E1E4D25E4003D1CEA /* UartDataExport.swift in Sources */,
 				A9286CD91E3A9B22008E5F81 /* DataConversions.swift in Sources */,
 				A983781B1E42A96400170319 /* DfuFilesPickerDialogViewController.swift in Sources */,
@@ -2000,7 +2003,6 @@
 				A91D65A41EFC15900097C8B6 /* PeripheralModulesDeviceTableViewCell.swift in Sources */,
 				A94A21B11E417271006A5F33 /* UartTimetampTableViewCell.swift in Sources */,
 				A91542721EDD7BC9007A34EA /* CalibrationMenuViewController.swift in Sources */,
-				A9BCD6081E4D36DE003D1CEA /* ColorRGBInterfaceController.swift in Sources */,
 				A9F4E1BD1F04467200BF8A70 /* ISColorWheel.m in Sources */,
 				A9CA084E1F35EF6900A0C621 /* UartServiceViewController.swift in Sources */,
 				A9286CDB1E3A9B22008E5F81 /* Preferences.swift in Sources */,
@@ -2013,13 +2015,11 @@
 				A907983D1E43A4DA005470A5 /* PinIOTableViewCell.swift in Sources */,
 				A915427D1EDD7CE8007A34EA /* Config.swift in Sources */,
 				A91542701EDD7BC9007A34EA /* MagnetometerProgressViewController.swift in Sources */,
-				A9BCD60E1E4D36DE003D1CEA /* ScanningInterfaceController.swift in Sources */,
 				A9286CD61E3A9B22008E5F81 /* AlertHelper.swift in Sources */,
 				A91502741EE4DAA800298005 /* PeripheralModulesTableViewCell.swift in Sources */,
-				A9BCD60C1E4D36DE003D1CEA /* MainInterfaceController.swift in Sources */,
 				A9D2344D1E3AD97600DC0C99 /* StyleConfig.swift in Sources */,
-				A915D3FF22AEF8AA009DBFCF /* ImageTransferModuleViewController.swift in Sources */,
 				A9D2345A1E3ADDEF00DC0C99 /* ScanningAnimationViewController.swift in Sources */,
+				A93845D322DFD99F00CB218E /* ImagePickerCroppingAreaViewController.swift in Sources */,
 				A93DE7651F36195900B2EB5D /* BlePeripheral+Battery.swift in Sources */,
 				A9335EDA1F526E3C009EB5B5 /* ThermalCameraModuleViewController.swift in Sources */,
 				A90798431E44F692005470A5 /* PlotterModuleManager.swift in Sources */,
@@ -2029,10 +2029,7 @@
 				A915426F1EDD7BC9007A34EA /* MagnetometerParametersViewController.swift in Sources */,
 				A91542681EDD7BC8007A34EA /* GyroscopePageContentViewController.swift in Sources */,
 				A915427F1EDD8041007A34EA /* StyledAnimations.swift in Sources */,
-				A9BCD6071E4D36DE003D1CEA /* ColorPaletteInterfaceController.swift in Sources */,
-				A9BCD60B1E4D36DE003D1CEA /* ControlPadInterfaceController.swift in Sources */,
 				A915426E1EDD7BC9007A34EA /* MagnetometerPageMatrixViewController.swift in Sources */,
-				A9BCD60A1E4D36DE003D1CEA /* ControlModeInterfaceController.swift in Sources */,
 				A983786D1E43422100170319 /* MqttSettingPickerCell.swift in Sources */,
 				A9286CD81E3A9B22008E5F81 /* Data+ScanValue.swift in Sources */,
 				A9BB78E21EDCEC65004663DE /* Calibration+Mahony.swift in Sources */,
@@ -2079,7 +2076,6 @@
 				A9CA085D1F35F84500A0C621 /* PeripheralModeViewController.swift in Sources */,
 				A9BB78E31EDCEC65004663DE /* Calibration.swift in Sources */,
 				A91E7D5C1E4216ED00DE90C6 /* UIImage+Color.swift in Sources */,
-				A9BCD60D1E4D36DE003D1CEA /* PickerModeInterfaceController.swift in Sources */,
 				A915426D1EDD7BC9007A34EA /* MagnetometerPageContentViewController.swift in Sources */,
 				A991A7C022AFDCFB003AE632 /* IntToBytes.swift in Sources */,
 				A9CA085A1F35F4B600A0C621 /* ModeTabsViewController.swift in Sources */,
@@ -2088,7 +2084,6 @@
 				A93DE7691F36195900B2EB5D /* BlePeripheral.swift in Sources */,
 				A90C79741E40CB150076E8AD /* EmptyDetailsViewController.swift in Sources */,
 				A9A89BDC1E83C5B000724F0E /* StyledConnectButton.swift in Sources */,
-				A9BCD6091E4D36DE003D1CEA /* ConnectedInterfaceController.swift in Sources */,
 				A907982A1E4349D6005470A5 /* ControllerComponentsTableViewCell.swift in Sources */,
 				A9BB78E41EDCEC65004663DE /* SensorParameters.swift in Sources */,
 				A91542741EDD7BC9007A34EA /* SensorConfigViewController.swift in Sources */,
@@ -2106,6 +2101,7 @@
 				A98DE4131E456AFC00EEF4C8 /* NeopixelModuleViewController.swift in Sources */,
 				A915427B1EDD7C3F007A34EA /* StyledLinkedButton.swift in Sources */,
 				A9D2343C1E3AD70300DC0C99 /* PeripheralTableViewCell.swift in Sources */,
+				A94056F12336EB2100872FD1 /* TraitOverrideContainerViewController.swift in Sources */,
 				A93DE77D1F36195900B2EB5D /* UartPacketManagerBase.swift in Sources */,
 				A91542691EDD7BC8007A34EA /* GyroscopePageDataViewController.swift in Sources */,
 				A969466D1E3CD0CC00BA8DAA /* StyledButton.swift in Sources */,
@@ -2181,20 +2177,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9BCD6141E4D36DF003D1CEA /* MainInterfaceController.swift in Sources */,
 				A9BCD6171E4D3932003D1CEA /* HexColorConversions.swift in Sources */,
+				A9B7E0812334E72100ED0384 /* ColorRGBInterfaceController.swift in Sources */,
+				A9B7E0822334E72100ED0384 /* ConnectedInterfaceController.swift in Sources */,
 				A9BCD6061E4D34D9003D1CEA /* WatchSessionManager.swift in Sources */,
-				A9BCD6111E4D36DF003D1CEA /* ConnectedInterfaceController.swift in Sources */,
+				A9B7E0832334E72100ED0384 /* ControlModeInterfaceController.swift in Sources */,
 				A9BCD5E11E4D289E003D1CEA /* NotificationController.swift in Sources */,
-				A9BCD6121E4D36DF003D1CEA /* ControlModeInterfaceController.swift in Sources */,
-				A9BCD6161E4D36DF003D1CEA /* ScanningInterfaceController.swift in Sources */,
-				A9BCD6101E4D36DF003D1CEA /* ColorRGBInterfaceController.swift in Sources */,
-				A9BCD6151E4D36DF003D1CEA /* PickerModeInterfaceController.swift in Sources */,
-				A9BCD6131E4D36DF003D1CEA /* ControlPadInterfaceController.swift in Sources */,
+				A9B7E0862334E72100ED0384 /* PickerModeInterfaceController.swift in Sources */,
+				A9B7E0852334E72100ED0384 /* MainInterfaceController.swift in Sources */,
 				A9BCD5FF1E4D2BE5003D1CEA /* LogHelper.swift in Sources */,
+				A9B7E0842334E72100ED0384 /* ControlPadInterfaceController.swift in Sources */,
+				A9B7E0872334E72100ED0384 /* ScanningInterfaceController.swift in Sources */,
+				A9B7E0802334E72100ED0384 /* ColorPaletteInterfaceController.swift in Sources */,
 				A9BCD6041E4D34D9003D1CEA /* HandoffManager.swift in Sources */,
 				A9BCD5DE1E4D289E003D1CEA /* ExtensionDelegate.swift in Sources */,
-				A9BCD60F1E4D36DF003D1CEA /* ColorPaletteInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2491,6 +2487,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Bluefruit/Platform/iOS/Bluefruit.entitlements;
+				CURRENT_PROJECT_VERSION = 39;
 				DEVELOPMENT_TEAM = 2X94RM7457;
 				INFOPLIST_FILE = Bluefruit/Platform/iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
@@ -2508,6 +2505,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Bluefruit/Platform/iOS/Bluefruit.entitlements;
+				CURRENT_PROJECT_VERSION = 39;
 				DEVELOPMENT_TEAM = 2X94RM7457;
 				INFOPLIST_FILE = Bluefruit/Platform/iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
@@ -2527,6 +2525,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2X94RM7457;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Bluefruit/Platform/macOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
@@ -2545,6 +2544,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2X94RM7457;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Bluefruit/Platform/macOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
@@ -2559,6 +2559,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CURRENT_PROJECT_VERSION = 39;
 				DEVELOPMENT_TEAM = 2X94RM7457;
 				INFOPLIST_FILE = "Bluefruit/Platform/watchOS/watchOS Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -2576,6 +2577,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CURRENT_PROJECT_VERSION = 39;
 				DEVELOPMENT_TEAM = 2X94RM7457;
 				INFOPLIST_FILE = "Bluefruit/Platform/watchOS/watchOS Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -2594,6 +2596,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 39;
 				DEVELOPMENT_TEAM = 2X94RM7457;
 				IBSC_MODULE = Bluefruit_Extension;
 				INFOPLIST_FILE = Bluefruit/Platform/watchOS/watchOS/Info.plist;
@@ -2613,6 +2616,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 39;
 				DEVELOPMENT_TEAM = 2X94RM7457;
 				IBSC_MODULE = Bluefruit_Extension;
 				INFOPLIST_FILE = Bluefruit/Platform/watchOS/watchOS/Info.plist;

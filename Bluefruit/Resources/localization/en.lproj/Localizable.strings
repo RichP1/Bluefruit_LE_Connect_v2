@@ -19,6 +19,7 @@ Please reset bluetooth and try again.";
 "bluetooth_advertising_start_error" = "Error starting advertising";
 
 // Main Tab-Bar
+"main_tabbar_singlemode" = "Select Device";
 "main_tabbar_centralmode" = "Central Mode";
 "main_tabbar_peripheralmode" = "Peripheral Mode";
 
@@ -561,6 +562,41 @@ Note: Any activated sensor data streams will continue while using the Control Pa
 "imagetransfer_tab_title" = "Image Transfer";
 "imagetransfer_navigation_title_format" = "Image Transfer - %@";
 
+"imagetransfer_help_title" = "Image Transfer";
+"imagetransfer_help_text" = "The Image Transfer module sends the image of your choice to Bluefruit LE over UART.
+
+Format:
+- single byte char “!” (0x21)
+- single byte char 'I' (0x49)
+- color space (uint8 16 for 16bits 565 or 24 for 24-bit 888)
+- image width (uint16 little endian, 2 bytes)
+- height (uint16 little endian, 2 bytes)
+- pixel data encoded as \"RGB 16bit 565” or \"RGB 24-bit 888\" depending on the Color Space selected
+- single byte CRC
+
+Transfer mode:
+This setting affects the speed of the data transfer. The recommended value is “Interleaved [50:1]”
+Take into account that data could be lost if the speed is too fast and your phone or the Bluefruit LE peripheral are not able to process it fast enough.
+
+The possible values for Transfer mode are:
+- Without response: Send packets without waiting for acknowledgement. This is the fastest method.
+- With response: Send each packet waiting for acknowledgment. This is the slowest and safest method.
+- Interleaved: sends a number of packets without response for each packet with response.";
+
+"imagetransfer_waitingforuart" = "Waiting for Uart...";
+"imagetransfer_resolution_title" = "Resolution:";
+"imagetransfer_resolution_value_default" = "Default";
+"imagetransfer_image_title" = "Image:";
+"imagetransfer_image_value_default" = "Default";
+"imagetransfer_transfermode_title" = "Transfer mode:";
+"imagetransfer_transfermode_value_withresponse" = "With Response";
+"imagetransfer_transfermode_value_withoutresponse" = "Without Response";
+"imagetransfer_transfermode_value_interleaved" = "Interleaved";
+"imagetransfer_transfermode_value_interleaved_format" = "Interleaved [%ld : 1]";
+"imagetransfer_transfermode_interleavedcount_title" = "Interleaved";
+"imagetransfer_transfermode_interleavedcount_message" = "Number of packets without response for each packet with response (default value = 50)";
+"imagetransfer_transfermode_interleavedcount_hint" = "Enter number";
+
 "imagetransfer_selectimage_action" = "Select image";
 "imagetransfer_imagepicker_camera" = "Take photo";
 "imagetransfer_imagepicker_cameraroll" = "Camera roll";
@@ -570,6 +606,22 @@ Note: Any activated sensor data streams will continue while using the Control Pa
 "imagetransfer_imageorigin_photolibrary" = "Photo library";
 "imagetransfer_imageorigin_other" = "Other";
 "imagetransfer_imageorigin_default" = "Default";
+"imagetransfer_imageorigin_choose" = "Choose Image";
+"imagetransfer_resolution_choose" = "Choose Resolution";
+"imagetransfer_send_action" = "Send Image";
+"imagetransfer_cameranotavailable" = "Camera is not available";
+"imagetransfer_decodeimage_error" = "Image cannot be decoded";
+"imagetransfer_outofmemory_error" = "Image too big for available memory";
+"imagetransfer_transferring" = "Sending image...";
+"imagetransfer_senddata_error" = "There was an error while transferring the image data";
+"imagetransfer_crop_action" = "Crop image";
+"imagetransfer_crop_error" = "Error cropping image ";
+"imagetransfer_colorspace_title" = "Color Space:";
+"imagetransfer_colorspace_16bit" = "16-bit";
+"imagetransfer_colorspace_24bit" = "24-bit";
+
+"imagetransfer_cameraneeded" = "Access to the camera is needed to take pictures";
+"imagetransfer_readexternalneeded" = "Access to the media library is needed to choose picture";
 
 
 
@@ -636,7 +688,12 @@ https://github.com/PhilJay/MPAndroidChart
 
 Android Vision Sample for Barcode Reading
 Copyright (C) The Android Open Source Project
-Licensed under the Apache License, Version 2.0";
+Licensed under the Apache License, Version 2.0
+
+ImageCropView
+Copyright (c) 2015 Naver Corp.
+Author Ohkyun Kim
+https://github.com/naver/android-imagecropview";
 "about_ios_text" = "A detailed guide to using this app can be found here:
 https://learn.adafruit.com/bluefruit-le-connect-for-ios
 
